@@ -113,17 +113,20 @@ nav ul{
     display:flex;
     list-style:none;
     gap:40px;
+    
 }
 
 
 nav li{
     position:relative;
+    
 }
 
 
 nav a{
     text-decoration:none;
     color:#5b3a29;
+    align-items: center;
 }
 
 
@@ -273,7 +276,7 @@ nav a{
 
 footer{
     background: #6b4f3b;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 40px;
     margin-top: 100px;
@@ -330,7 +333,7 @@ footer{
    Detail Page
 ===================== */
 
-
+/* 
 .shop-title{
 
     margin-top:130px;
@@ -354,7 +357,7 @@ footer{
 }
 
 
-
+ */
 
 
 .shop-main-image{
@@ -375,22 +378,6 @@ footer{
 }
 
 
-
-
-
-.shop-story{
-
-    max-width:800px;
-    text-align:center;
-
-}
-
-
-.shop-story p{
-
-    margin-bottom:30px;
-
-}
 
 
 
@@ -484,14 +471,14 @@ td{
     color:#8b5e3c;
 }
 
-ul{
+/* ul{
     margin-left:20px;
     margin-bottom:30px;
 }
 
 li{
     margin-bottom:8px;
-}
+} */
 
 p{
     color:#555;
@@ -555,3 +542,4 @@ p{
     }
 
 }
+
