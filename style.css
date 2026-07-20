@@ -6,16 +6,552 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-html {
-  font-size: 15px;
+
+html{
+    scroll-behavior: smooth;
 }
 
-img {
+/* * #wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} * */
+
+
+/*ヘッダ-*/
+#home {
   width: 100%;
   height: auto;
   vertical-align: bottom;
+    padding-top: 80px; /* ヘッダーの高さ分のパディング */
+    color: rgb(255, 255, 255);
+    display: flex;
+    /* justify-content: center; */
+    padding-left: 3.5rem;
+    align-items: center;
+    font-size: 2.5rem;
+    position: relative; 
+    overflow: hidden;
 }
 
-body {
-  height: 100%;
+
+.main-visual img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+    /* padding-top: 80px; ヘッダーの高さ分のパディング */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    overflow: hidden;
+  }
+
+body{
+    font-family: "Noto Sans JP", sans-serif;
+    background: #faf8f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* img{
+    width: 100%;
+    display: block;
+} */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ul{
+    list-style: none;
+} */
+
+section{
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+h1,h2,h3{
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #6b4f3b;
+}
+
+/* =========================
+   Header
+========================= */
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+.logo{
+    font-size: 32px;
+    /* font-family: "Cormorant Garamond", serif; */
+    font-weight: bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+
+nav li{
+    position:relative;
+}
+
+
+nav a{
+    text-decoration:none;
+    color:#5b3a29;
+}
+
+
+/* Bakeryの子メニュー */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:30px;
+    left:-100px;
+
+    width:180px;
+
+    background:#fff;
+
+    display:block;
+
+    padding:10px 0;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+}
+
+
+/* 子メニューの文字 */
+
+.dropdown-menu li{
+
+    width:100%;
+
+}
+
+
+.dropdown-menu a{
+
+    display:block;
+
+    padding:12px 20px;
+
+    white-space:nowrap;
+
+}
+
+
+/* ホバー時 */
+
+.dropdown:hover .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+
+/* 子メニューのホバー */
+
+.dropdown-menu a:hover{
+
+    background:#f3e5d0;
+    color:#8b5e3c;
+
+}
+
+
+/* =========================
+   Bakery List
+========================= */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    
+}
+
+.card{
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3{
+    padding: 20px 20px 10px;
+    font-size: 28px;
+}
+
+.card p{
+    padding: 0 20px 25px;
+}
+
+/* =========================
+   About
+========================= */
+
+.about-home{
+    text-align: center;
+    background: white;
+    padding: 80px;
+    border-radius: 10px;
+}
+
+.about-home p{
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.button{
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #8c6239;
+    color: #8c6239;
+    transition: .3s;
+}
+
+.button:hover{
+    background: #8c6239;
+    color: white;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    background: #6b4f3b;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:900px){
+
+header{
+    flex-direction: column;
+    padding:20px;
+}
+
+nav ul{
+    margin-top:15px;
+    gap:20px;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.pickup-card{
+    flex-direction:column;
+}
+
+.pickup-card img,
+.pickup-text{
+    width:100%;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.about-home{
+    padding:50px 30px;
+}
+
+}
+footer{
+    background: #6b4f3b;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+
+/* =====================
+   Detail Page
+===================== */
+
+
+.shop-title{
+
+    margin-top:130px;
+    text-align:center;
+
+}
+
+
+.shop-title h1{
+
+    font-size:60px;
+    color:#6b4f3b;
+
+}
+
+
+.shop-title p{
+
+    color:#a47148;
+
+}
+
+
+
+
+
+.shop-main-image{
+
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+
+}
+
+
+.shop-main-image img{
+
+    height:600px;
+    object-fit:cover;
+    border-radius:10px;
+
+}
+
+
+
+
+
+.shop-story{
+
+    max-width:800px;
+    text-align:center;
+
+}
+
+
+.shop-story p{
+
+    margin-bottom:30px;
+
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Yu Gothic",sans-serif;
+    background:#faf8f4;
+    color:#333;
+    line-height:1.8;
+}
+
+.shop-detail{
+    width:1200px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+/* 左側 */
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    /* position:sticky; */
+    top:40px;
+    height:fit-content;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:16px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+/* スクロールバー
+
+.gallery::-webkit-scrollbar{
+    width:8px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:#d8b98b;
+    border-radius:10px;
+} */
+
+/* 右側 */
+
+.shop-info{
+    position:static;
+}
+
+.shop-info h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.catch{
+    color:#666;
+    margin-bottom:35px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:40px;
+}
+
+th{
+    width:120px;
+    text-align:left;
+    background:#f3e5d0;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+.shop-info h2{
+    margin:30px 0 15px;
+    color:#8b5e3c;
+}
+
+ul{
+    margin-left:20px;
+    margin-bottom:30px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+p{
+    color:#555;
+}
+
+/* --------------------
+   スマホ対応
+-------------------- */
+@media screen and (max-width: 768px) {
+
+    .shop-detail{
+        width: 90%;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* 画像 */
+    .gallery{
+        gap: 15px;
+    }
+
+    .gallery img{
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    /* 店舗情報 */
+    .shop-info{
+        position: static;
+    }
+
+    .shop-info h1{
+        font-size: 30px;
+    }
+
+    .shop-info h2{
+        font-size: 22px;
+    }
+
+    .catch{
+        font-size: 15px;
+    }
+
+    table{
+        font-size: 14px;
+    }
+
+    th{
+        width: 90px;
+        padding: 10px;
+    }
+
+    td{
+        padding: 10px;
+    }
+
+    ul{
+        margin-left: 18px;
+    }
+
 }
